@@ -5,6 +5,14 @@ This just needs to be an extremely basic todo list app where a user can log in a
 
 A to-do list API written in NodeJS and REST.
 
+### Development
+
+See details for setting up development [here](https://docs.google.com/document/d/1Pf4q1221J40br0n5gkL9FdoS6t2Z8OFZFCT5AviOT30/edit?usp=sharing) using the data below
+
+- `DATABASE_NAME`: `todo_app`
+- `TEST_DATABASE_NAME`: `todo_app_tests`
+
+
 ### Authentication
 
 Authentication is handled via JWT and an XSRF Token. Analyzing in postman should suffice. You will need to make sure you have the 'Interceptor' extension installed since the JWT is being sent via a cookie.

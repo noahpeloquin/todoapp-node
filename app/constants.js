@@ -1,0 +1,2 @@
+module.exports.PERMISSIONS_ERROR = 'PERMISSIONS_ERROR';
+module.exports.NOT_FOUND_ERROR = 'NOT_FOUND_ERROR';

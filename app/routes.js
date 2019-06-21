@@ -108,10 +108,7 @@ const tasksValidator = Joi.object({ task: validators.Task.joi() });
 
 // Routes
 
-router
-  .route('/tasks')
-  .all(blockUnauthorizedUser)
-  .get(tasksController.index);
+router.route('/tasks').get(tasksController.index);
 
 router
   .route('/tasks')
@@ -124,12 +121,12 @@ router
   );
 
 router
-  .route('/posts/:id')
+  .route('/tasks/:id')
   .all(validate({ params: idValidator }))
   .get(tasksController.show);
 
 router
-  .route('/posts/:id')
+  .route('/tasks/:id')
   .all(blockUnauthorizedUser, validate({ params: idValidator }))
   .put(validate({ body: tasksValidator }), tasksController.update)
   .delete(tasksController.destroy);

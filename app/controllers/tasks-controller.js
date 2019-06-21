@@ -1,5 +1,3 @@
-
-
 const { respondWithErrors, logError } = require('../utils/error-factory');
 const { PERMISSIONS_ERROR, NOT_FOUND_ERROR } = require('../constants');
 const _ = require('lodash');
@@ -20,14 +18,10 @@ module.exports.filters = (req, res, next) => {
 module.exports.create = async (req, res) => {
   try {
     let task = _.pick(req.body.task, strongParams);
-    // console.log('in module export create task:');
-    // console.dir(task);
     task.author_id = req.user.id;
     task.url_path = task.author_id + Date.now();
 
     task = await Task.create(task);
-    // console.log('After creation task:');
-    // console.dir(task);
 
     return res.json({
       task: _.pick(task, publicParams),
